@@ -1,0 +1,15 @@
+C:\Users\ISREAL\source\repos\RecordKeeperApp\RecordKeeperApp\bin\Debug\net6.0\RecordKeeperApp.exe
+C:\Users\ISREAL\source\repos\RecordKeeperApp\RecordKeeperApp\bin\Debug\net6.0\RecordKeeperApp.deps.json
+C:\Users\ISREAL\source\repos\RecordKeeperApp\RecordKeeperApp\bin\Debug\net6.0\RecordKeeperApp.runtimeconfig.json
+C:\Users\ISREAL\source\repos\RecordKeeperApp\RecordKeeperApp\bin\Debug\net6.0\RecordKeeperApp.dll
+C:\Users\ISREAL\source\repos\RecordKeeperApp\RecordKeeperApp\bin\Debug\net6.0\RecordKeeperApp.pdb
+C:\Users\ISREAL\source\repos\RecordKeeperApp\RecordKeeperApp\obj\Debug\net6.0\RecordKeeperApp.csproj.AssemblyReference.cache
+C:\Users\ISREAL\source\repos\RecordKeeperApp\RecordKeeperApp\obj\Debug\net6.0\RecordKeeperApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ISREAL\source\repos\RecordKeeperApp\RecordKeeperApp\obj\Debug\net6.0\RecordKeeperApp.AssemblyInfoInputs.cache
+C:\Users\ISREAL\source\repos\RecordKeeperApp\RecordKeeperApp\obj\Debug\net6.0\RecordKeeperApp.AssemblyInfo.cs
+C:\Users\ISREAL\source\repos\RecordKeeperApp\RecordKeeperApp\obj\Debug\net6.0\RecordKeeperApp.csproj.CoreCompileInputs.cache
+C:\Users\ISREAL\source\repos\RecordKeeperApp\RecordKeeperApp\obj\Debug\net6.0\RecordKeeperApp.dll
+C:\Users\ISREAL\source\repos\RecordKeeperApp\RecordKeeperApp\obj\Debug\net6.0\refint\RecordKeeperApp.dll
+C:\Users\ISREAL\source\repos\RecordKeeperApp\RecordKeeperApp\obj\Debug\net6.0\RecordKeeperApp.pdb
+C:\Users\ISREAL\source\repos\RecordKeeperApp\RecordKeeperApp\obj\Debug\net6.0\RecordKeeperApp.genruntimeconfig.cache
+C:\Users\ISREAL\source\repos\RecordKeeperApp\RecordKeeperApp\obj\Debug\net6.0\ref\RecordKeeperApp.dll
