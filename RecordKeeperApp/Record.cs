@@ -9,13 +9,13 @@ namespace RecordKeeperApp
     class Record
     {
         private string _name;
-        private double _amount;
+        private int _amount;
         private double _quantity;
         private int _totalAmount;
 
         public Record(){}
 
-        public Record(string name, double amount, double quantity, int totalAmount)
+        public Record(string name, int amount, double quantity, int totalAmount)
         {
             _name = name;
             _amount = amount;
@@ -29,8 +29,32 @@ namespace RecordKeeperApp
             Console.WriteLine("Do you want to add a record of sale?");
             Console.WriteLine("Click 1 if yes\nClick 0 to exit");
 
-            int? name = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Your name is {0} ",name);
+            while (true)
+            {
+                try
+                {
+                    Console.WriteLine("\n***************** RECORDS ***********************");
+                    Console.Write("Name of buyer");
+                    _name = Console.ReadLine();
+
+                    if (_name?.Length <= 3)
+                    {
+                        Console.WriteLine("Name is too short. It must be longer than 3");
+                        continue;
+                    }
+                    Console.WriteLine("Your name is {0} ", _name);                  
+
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+
+                _amount = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Your name is {0} ", _amount);
+            }
+
+            
         }
     }
 }
