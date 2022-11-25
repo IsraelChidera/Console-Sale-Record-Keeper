@@ -3,10 +3,12 @@
     class Record
     {
         private string _name;
-        private string _amount;
+        private int _amount;
         private DateTime _date;
         private decimal _percentage;
-        private DateTime _startDate;       
+        private DateTime _startDate;
+        private int _payment;
+        
 
         public Record() { }
        
@@ -46,22 +48,22 @@
             }
 
             Console.Write("Amount owed: ");
-            _amount = Console.ReadLine();
+            _amount = Convert.ToInt32(Console.ReadLine());
 
             while (true)
             {
                 try
                 {
-                    if (int.TryParse(_amount, out int amt))
+                    if (_amount>35000)
                     {
-                        Console.WriteLine("Amount =====> {0}", amt);
+                        Console.WriteLine("Amount =====> {0}", _amount);
                         break;
                     }
                     else
                     {
-                        Console.WriteLine("Invalid input. Enter a valid number");
-                        //amt = Convert.ToInt32(Console.ReadLine());
-                        _amount = Console.ReadLine();
+                        Console.WriteLine("Invalid input. You can only pay installmental for products higher than" +
+                            " N35000");                        
+                        _amount = Convert.ToInt32(Console.ReadLine());
                     }
                 }
                 catch(Exception e)
@@ -97,7 +99,7 @@
                     Console.WriteLine("Monthyly plan");
                     break;
                 default:
-                    Console.WriteLine("Ibalid");
+                    Console.WriteLine("Invalid plan");
                     break;
             }
 
@@ -106,21 +108,22 @@
 
         public void dailyPayment()
         {
-            _percentage = (decimal)(5d/100);
+            _percentage = ((decimal)(5d / 100));
             Console.WriteLine("Record list");
             Console.WriteLine($"{_name} willl pay {_amount} through the daily installmental plan");
             Console.WriteLine($"Date of purchase: {_startDate=DateTime.Now}");
 
-            int payment =(int) _percentage * Convert.ToInt32(_amount);
-            Console.WriteLine(payment);
-            Console.WriteLine($"{_name} chose the daily payment plan of paying {payment} till " +
+            _payment = (int)(_percentage * _amount);
+            
+            Console.WriteLine(_payment);
+            Console.WriteLine($"{_name} chose the daily payment plan of paying {_payment} till " +
                 $"{_amount} is completed");
             Console.WriteLine(_percentage);
         }
 
         public void weeklyPayment()
         {
-            _percentage = (decimal)(15d / 100);
+            //_percentage = (15d / 100);
             Console.WriteLine("Record list");
             Console.WriteLine($"{_name} willl pay {_amount} through the weekly installmental plan");
             Console.WriteLine($"Date of purchase: {_startDate = DateTime.Now}");
