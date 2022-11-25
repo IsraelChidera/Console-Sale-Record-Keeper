@@ -110,24 +110,32 @@
         {
             _percentage = ((decimal)(5d / 100));
             Console.WriteLine("Record list");
-            Console.WriteLine($"{_name} willl pay {_amount} through the daily installmental plan");
+            Console.WriteLine($"{_name} willl pay N{_amount} through the daily installmental plan");
             Console.WriteLine($"Date of purchase: {_startDate=DateTime.Now}");
 
             _payment = (int)(_percentage * _amount);
             
             Console.WriteLine(_payment);
-            Console.WriteLine($"{_name} chose the daily payment plan of paying {_payment} till " +
-                $"{_amount} is completed");
-            Console.WriteLine(_percentage);
+            Console.WriteLine($"{_name} chose the daily payment plan of paying N{_payment} till " +
+                $"N{_amount} is completed");
+            _startDate = _date.AddDays(1);
+            Console.WriteLine("****************************************************************");
+            for (int i = _payment; i < _amount; i += _payment)
+            {
+                Console.WriteLine($"{_name} will pay {_payment} for {_startDate.ToLongDateString()}");
+                _startDate = _date.AddDays(1);
+            }
         }
 
         public void weeklyPayment()
         {
             //_percentage = (15d / 100);
             Console.WriteLine("Record list");
-            Console.WriteLine($"{_name} willl pay {_amount} through the weekly installmental plan");
+            Console.WriteLine($"{_name} willl pay N{_amount} through the weekly installmental plan");
             Console.WriteLine($"Date of purchase: {_startDate = DateTime.Now}");
-            Console.WriteLine(_percentage);
+            
+
+            
         }
 
 
