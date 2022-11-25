@@ -47,7 +47,7 @@
                 }
             }
 
-            Console.Write("Amount owed: ");
+            Console.Write("Amount to pay: ");
             _amount = Convert.ToInt32(Console.ReadLine());
 
             while (true)
@@ -69,16 +69,19 @@
                 catch(Exception e)
                 {
                     Console.WriteLine("Invalid amount");
+                    Console.WriteLine(e.ToString());
+                    Console.Write("Amount owed: ");
+                    _amount = Convert.ToInt32(Console.ReadLine());
                 }
             }
 
             Console.WriteLine("\nSelect a Plan ");
-            Console.WriteLine("4% installmental Payment with Daily Plan, Type 1");
-            Console.WriteLine("5% installmental Payment with Weekly Plan , Type 2");
-            Console.WriteLine("10% installmental Payment with Bi-Weekly Plan , Type 3");
-            Console.WriteLine("20% installmental Payment with Monthly Plan , Type 4");
-            Console.WriteLine("25% installmental Payment with Six-Month Plan , Type 5");
-            Console.WriteLine("50% installmental Payment with Yearly , Type 6");
+            Console.WriteLine("======> For a 10% installmental Payment with Daily Plan, Type 1");
+            Console.WriteLine("======> For a 20% installmental Payment with Weekly Plan , Type 2");
+            Console.WriteLine("======> For a 25% installmental Payment with Bi-Weekly Plan , Type 3");
+            Console.WriteLine("======> For a 30% installmental Payment with Monthly Plan , Type 4");
+            Console.WriteLine("======> For a 40% installmental Payment with Six-Month Plan , Type 5");
+            Console.WriteLine("======> For a 50% installmental Payment with Yearly , Type 6");
 
             int plan = Convert.ToInt32(Console.ReadLine());
 
@@ -117,14 +120,13 @@
             
             Console.WriteLine(_payment);
             Console.WriteLine($"{_name} chose the daily payment plan of paying N{_payment} till " +
-                $"N{_amount} is completed");
+                $"N{_amount} is completed\n");
+
             _startDate = _date.AddDays(1);
-            Console.WriteLine("****************************************************************");
-            for (int i = _payment; i < _amount; i += _payment)
-            {
-                Console.WriteLine($"{_name} will pay {_payment} for {_startDate.ToLongDateString()}");
-                _startDate = _date.AddDays(1);
-            }
+            Console.WriteLine( _startDate);
+            Console.WriteLine("\n****************************************************************");
+            Console.WriteLine($"{_name} will pay {_payment} and it is due on {_startDate.ToLongDateString()}");
+            
         }
 
         public void weeklyPayment()
