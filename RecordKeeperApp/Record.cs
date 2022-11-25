@@ -76,8 +76,8 @@
             }
 
             Console.WriteLine("\nSelect a Plan ");
-            Console.WriteLine("======> For a 10% installmental Payment with Daily Plan, Type 1");
-            Console.WriteLine("======> For a 20% installmental Payment with Weekly Plan , Type 2");
+            Console.WriteLine("======> For a 5% installmental Payment with Daily Plan, Type 1");
+            Console.WriteLine("======> For a 10% installmental Payment with Weekly Plan , Type 2");
             Console.WriteLine("======> For a 25% installmental Payment with Bi-Weekly Plan , Type 3");
             Console.WriteLine("======> For a 30% installmental Payment with Monthly Plan , Type 4");
             Console.WriteLine("======> For a 40% installmental Payment with Six-Month Plan , Type 5");
@@ -96,10 +96,20 @@
                     weeklyPayment();
                     break;
                 case 3:
-                    Console.WriteLine("Weekly plan");
+                    Console.WriteLine("Bi-weekly plan");
+                    biWeeklyPayment();
                     break;
                 case 4:
                     Console.WriteLine("Monthyly plan");
+                    monthly();
+                    break;
+                case 5:
+                    Console.WriteLine("6-month plan");
+                    sixMonths();
+                    break;
+                case 6:
+                    Console.WriteLine("Yearly plan");
+                    yearly();
                     break;
                 default:
                     Console.WriteLine("Invalid plan");
@@ -125,21 +135,109 @@
             _startDate = _date.AddDays(1);
             Console.WriteLine( _startDate);
             Console.WriteLine("\n****************************************************************");
-            Console.WriteLine($"{_name} will pay {_payment} and it is due on {_startDate.ToLongDateString()}");
+            Console.WriteLine($"{_name} will pay total amount of{_amount} and it is due on {DateTime.Now.AddDays(_payment)}");
             
         }
 
         public void weeklyPayment()
         {
-            //_percentage = (15d / 100);
+            _percentage = ((decimal)(10d / 100));
             Console.WriteLine("Record list");
             Console.WriteLine($"{_name} willl pay N{_amount} through the weekly installmental plan");
             Console.WriteLine($"Date of purchase: {_startDate = DateTime.Now}");
-            
 
-            
+            _payment = (int)(_percentage * _amount);
+
+            Console.WriteLine(_payment);
+            Console.WriteLine($"{_name} chose the weekly payment plan of paying N{_payment} till " +
+                $"N{_amount} is completed\n");
+
+            _startDate = _date.AddDays(1);
+            Console.WriteLine(_startDate);
+            Console.WriteLine("\n****************************************************************");
+            Console.WriteLine($"{_name} will pay total amount of{_amount} and it is due on {DateTime.Now.AddDays(_payment)}");
+
+
         }
 
+        public void biWeeklyPayment()
+        {
+            _percentage = ((decimal)(10d / 100));
+            Console.WriteLine("Record list");
+            Console.WriteLine($"{_name} willl pay N{_amount} through the bi-weekly installmental plan");
+            Console.WriteLine($"Date of purchase: {_startDate = DateTime.Now}");
 
+            _payment = (int)(_percentage * _amount);
+
+            Console.WriteLine(_payment);
+            Console.WriteLine($"{_name} chose the bi-weekly payment plan of paying N{_payment} till " +
+                $"N{_amount} is completed\n");
+
+            _startDate = _date.AddDays(1);
+            Console.WriteLine(_startDate);
+            Console.WriteLine("\n****************************************************************");
+            Console.WriteLine($"{_name} will pay total amount of{_amount} and it is due on {DateTime.Now.AddDays(_payment)}");
+
+        }
+
+        public void monthly()
+        {
+            _percentage = ((decimal)(10d / 100));
+            Console.WriteLine("Record list");
+            Console.WriteLine($"{_name} willl pay N{_amount} through the monthly installmental plan");
+            Console.WriteLine($"Date of purchase: {_startDate = DateTime.Now}");
+
+            _payment = (int)(_percentage * _amount);
+
+            Console.WriteLine(_payment);
+            Console.WriteLine($"{_name} chose the monthly payment plan of paying N{_payment} till " +
+                $"N{_amount} is completed\n");
+
+            _startDate = _date.AddDays(1);
+            Console.WriteLine(_startDate);
+            Console.WriteLine("\n****************************************************************");
+            Console.WriteLine($"{_name} will pay total amount of{_amount} and it is due on {DateTime.Now.AddDays(_payment)}");
+
+        }
+
+        public void sixMonths()
+        {
+            _percentage = ((decimal)(10d / 100));
+            Console.WriteLine("Record list");
+            Console.WriteLine($"{_name} willl pay N{_amount} through the 6-month installmental plan");
+            Console.WriteLine($"Date of purchase: {_startDate = DateTime.Now}");
+
+            _payment = (int)(_percentage * _amount);
+
+            Console.WriteLine(_payment);
+            Console.WriteLine($"{_name} chose the 6-month payment plan of paying N{_payment} till " +
+                $"N{_amount} is completed\n");
+
+            _startDate = _date.AddDays(1);
+            Console.WriteLine(_startDate);
+            Console.WriteLine("\n****************************************************************");
+            Console.WriteLine($"{_name} will pay total amount of{_amount} and it is due on {DateTime.Now.AddDays(_payment)}");
+
+        }
+
+        public void yearly()
+        {
+            _percentage = ((decimal)(10d / 100));
+            Console.WriteLine("Record list");
+            Console.WriteLine($"{_name} willl pay N{_amount} through the yearly installmental plan");
+            Console.WriteLine($"Date of purchase: {_startDate = DateTime.Now}");
+
+            _payment = (int)(_percentage * _amount);
+
+            Console.WriteLine(_payment);
+            Console.WriteLine($"{_name} chose the yearly payment plan of paying N{_payment} till " +
+                $"N{_amount} is completed\n");
+
+            _startDate = _date.AddDays(1);
+            Console.WriteLine(_startDate);
+            Console.WriteLine("\n****************************************************************");
+            Console.WriteLine($"{_name} will pay total amount of{_amount} and it is due on {DateTime.Now.AddDays(_payment)}");
+
+        }
     }
 }
