@@ -5,6 +5,8 @@
         private string _name;
         private string _amount;
         private DateTime _date;
+        private decimal _percentage;
+        private DateTime _startDate;
 
         public Record() { }
 
@@ -88,9 +90,11 @@
             {
                 case 1:
                     Console.WriteLine("Daily plan");
+                    dailyPayment();
                     break;
                 case 2:
                     Console.WriteLine("Weekly plan");
+                    weeklyPayment();
                     break;
                 case 3:
                     Console.WriteLine("Weekly plan");
@@ -102,8 +106,26 @@
                     Console.WriteLine("Ibalid");
                     break;
             }
+
+            
         }
 
-       
+        public void dailyPayment()
+        {
+            _percentage = (1/10)*100;
+            Console.WriteLine("Record list");
+            Console.WriteLine($"{_name} willl pay {_amount} through the daily installmental plan");
+            Console.WriteLine(_percentage);
+        }
+
+        public void weeklyPayment()
+        {
+            _percentage = (2 / 10)*100;
+            Console.WriteLine("Record list");
+            Console.WriteLine($"{_name} willl pay {_amount} through the weekly installmental plan");
+            Console.WriteLine(_percentage);
+        }
+
+
     }
 }
