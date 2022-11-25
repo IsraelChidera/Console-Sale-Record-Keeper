@@ -6,16 +6,10 @@
         private string _amount;
         private DateTime _date;
         private decimal _percentage;
-        private DateTime _startDate;
+        private DateTime _startDate;       
 
         public Record() { }
-
-        public Record(string name, string amount)
-        {
-            _name = name;
-            _amount = amount;
-            
-        }
+       
 
         public void collectRecords()
         {
@@ -112,17 +106,24 @@
 
         public void dailyPayment()
         {
-            _percentage = (1/10)*100;
+            _percentage = (decimal)(5d/100);
             Console.WriteLine("Record list");
             Console.WriteLine($"{_name} willl pay {_amount} through the daily installmental plan");
+            Console.WriteLine($"Date of purchase: {_startDate=DateTime.Now}");
+
+            int payment =(int) _percentage * Convert.ToInt32(_amount);
+            Console.WriteLine(payment);
+            Console.WriteLine($"{_name} chose the daily payment plan of paying {payment} till " +
+                $"{_amount} is completed");
             Console.WriteLine(_percentage);
         }
 
         public void weeklyPayment()
         {
-            _percentage = (2 / 10)*100;
+            _percentage = (decimal)(15d / 100);
             Console.WriteLine("Record list");
             Console.WriteLine($"{_name} willl pay {_amount} through the weekly installmental plan");
+            Console.WriteLine($"Date of purchase: {_startDate = DateTime.Now}");
             Console.WriteLine(_percentage);
         }
 
