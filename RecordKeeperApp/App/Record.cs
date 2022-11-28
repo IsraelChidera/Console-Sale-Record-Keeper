@@ -11,6 +11,12 @@ namespace RecordKeeperApp.App
         private DateTime _startDate;
         private int _payment;
 
+        public enum PaymentMade
+        {
+            minimumPayment = 10000,
+            minuimumNameLength = 3
+        }
+
 
         public Record() { }
 
@@ -18,17 +24,19 @@ namespace RecordKeeperApp.App
         public void CollectRecords()
         {
 
+            int minimumAmount = (int)PaymentMade.minimumPayment;
+            int minimumLength = (int)PaymentMade.minuimumNameLength;
 
-            Console.Write("Name of buyer: ");
+            Console.Write("\nName of buyer: ");
             _name = Console.ReadLine();
 
             while (true)
             {
                 try
                 {
-                    if (_name?.Length >= 3)
+                    if (_name?.Length >= minimumLength)
                     {
-                        Console.WriteLine("Name =====> {0}", _name);
+                        Console.WriteLine("Buyer's name =====> {0}", _name);
                         break;
                     }
                     else
@@ -38,20 +46,25 @@ namespace RecordKeeperApp.App
                     }
 
                 }
-                catch (Exception e)
+                catch (FormatException)
                 {
                     Console.WriteLine("Please enter a correct format");
                 }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    Console.WriteLine(ex.ToString());
+                }
             }
 
-            Console.Write("Amount to pay: ");
+            Console.Write("\nAmount to pay: ");
             _amount = Convert.ToInt32(Console.ReadLine());
 
             while (true)
             {
                 try
                 {
-                    if (_amount > 10000)
+                    if (_amount > minimumAmount)
                     {
                         Console.WriteLine("Amount =====> {0}", _amount);
                         break;
@@ -72,7 +85,7 @@ namespace RecordKeeperApp.App
                 }
             }
 
-            Console.WriteLine("\nSelect a Payment Plan ");
+            Console.WriteLine("\n\nSelect a Payment Plan ");
             Console.WriteLine("======> For a 5% installmental Payment with Daily Plan, Type 1");
             Console.WriteLine("======> For a 10% installmental Payment with Weekly Plan , Type 2");
             Console.WriteLine("======> For a 25% installmental Payment with Bi-Weekly Plan , Type 3");
