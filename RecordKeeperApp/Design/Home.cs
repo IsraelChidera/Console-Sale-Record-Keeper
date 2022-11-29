@@ -20,8 +20,7 @@ namespace RecordKeeperApp.Design
             Console.WriteLine("Do you want to add a record ?");
             Utility.PressEnterToContinue();
             Utility.LoadingAnimation();
-
-            Console.WriteLine("\n******************** RECORDS ***************************");
+            
         }
     }
 }
