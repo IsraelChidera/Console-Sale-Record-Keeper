@@ -7,6 +7,7 @@ namespace RecordKeeperApp.App
     {
         private double _percentage;
         private DateTime _startDate;
+        private DateTime _dueDate;
         private int _payment;
         public CollectRecord debtor = new();
 
@@ -22,19 +23,17 @@ namespace RecordKeeperApp.App
 
         public void dailyPayment()
         {
-            double dailyPercentage = (double)Percentage.dailyPercentage;
-            //double num = debtor.GetAmount / _payment;
+            double dailyPercentage = (double)Percentage.dailyPercentage;            
             
             _percentage = (double)(dailyPercentage / 100); 
             
             Utility.RecordHeader();
 
-            Console.WriteLine($"\n{debtor.GetName} will pay N{debtor.GetAmount} through the daily installmental plan");
-            //Console.WriteLine($"Date of purchase: {_startDate = DateTime.Now}");
-
+            Console.WriteLine($"\n{debtor.GetName} will pay N{debtor.GetAmount} through the daily installmental plan");            
             Console.WriteLine("\n************************************************************");
+
             _payment =(int)(_percentage * debtor.GetAmount);
-            double num = debtor.GetAmount / _payment;
+            int num = (int)(debtor.GetAmount / _payment);
 
             /*Console.WriteLine(_payment);*/
             Console.WriteLine($"{debtor.GetName} chose the daily payment plan of paying N{_payment} till " +
@@ -44,12 +43,15 @@ namespace RecordKeeperApp.App
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("\n************************************************************");
             Console.WriteLine("****************************************************************");
-            _startDate = debtor.GetDateTime.AddDays(1);
-            Console.WriteLine("Number of installment to pay ==>");
+
+            _startDate = DateTime.Now;
+            _dueDate = DateTime.Now.AddDays(num);
+
+            Console.Write("Number of installment to pay ==> ");
             Console.Write($"{num} installment");
             Console.Write("\nStart date for installment repayment ==>");
             Console.WriteLine(_startDate);            
-            Console.WriteLine($"{debtor.GetName}'s payment is due on {DateTime.Now.AddDays(_payment)}");
+            Console.WriteLine($"{debtor.GetName}'s payment is due on {_dueDate}");
             Console.ResetColor();
 
             Utility.ReturnToMenu();
