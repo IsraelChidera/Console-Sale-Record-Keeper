@@ -1,32 +1,41 @@
 ﻿using RecordKeeperApp.App.PartialClasses;
+using RecordKeeperApp.Design;
 
 namespace RecordKeeperApp.App
 {
     internal class Installmentals
     {
-        private decimal _percentage;
+        private double _percentage;
         private DateTime _startDate;
-        private double _payment;
+        private int _payment;
         public CollectRecord debtor = new();
+
+        public enum Percentage
+        {
+            dailyPercentage = 5,
+            weeklyPercentage = 10,
+            biWeeklyPercentage = 25,
+            monthlyPercentage = 30,
+            sixMonthsPercentage = 40,
+            yearlyPercentage = 50,
+        }
 
         public void dailyPayment()
         {
-            _percentage = (decimal)(5d / 100);
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("\n*************************************************************");
-            Console.WriteLine("Record list");
-            Console.WriteLine("**************************************************************");
-            Console.ResetColor();
+            double dailyPercentage = (double)Percentage.dailyPercentage;
+            
+            _percentage = (double)(dailyPercentage / 100);            
+            Utility.RecordHeader();
 
             Console.WriteLine($"\n{debtor.GetName} willl pay N{debtor.GetAmount} through the daily installmental plan");
             //Console.WriteLine($"Date of purchase: {_startDate = DateTime.Now}");
 
             Console.WriteLine("\n************************************************************");
-            _payment = (long)(_percentage * debtor.GetAmount);
+            _payment =(int)(_percentage * debtor.GetAmount);
 
             /*Console.WriteLine(_payment);*/
-            Console.WriteLine($"\n{debtor.GetName} chose the daily payment plan of paying N{_payment} till " +
-                $"N{debtor.GetAmount} is completed\n");
+            Console.WriteLine($"{debtor.GetName} chose the daily payment plan of paying N{_payment} till " +
+                $"N{debtor.GetAmount} is completed");
 
             Console.WriteLine("************************************************************\n");
 
@@ -35,12 +44,17 @@ namespace RecordKeeperApp.App
             Console.WriteLine("\n****************************************************************");
             Console.WriteLine($"{debtor.GetName} will pay total amount of{debtor.GetAmount} and it is due on {DateTime.Now.AddDays(_payment)}");
 
+
+            Utility.ReturnToMenu();
         }
 
         public void weeklyPayment()
         {
-            _percentage = (decimal)(10d / 100);
-            Console.WriteLine("Record list");
+            double weeklyPercentage = (double)Percentage.weeklyPercentage;
+
+            _percentage = (double)(weeklyPercentage / 100);
+            Utility.RecordHeader();
+            
             Console.WriteLine($"{debtor.GetName} willl pay N{debtor.GetAmount} through the weekly installmental plan");
             Console.WriteLine($"Date of purchase: {_startDate = DateTime.Now}");
 
@@ -55,13 +69,16 @@ namespace RecordKeeperApp.App
             Console.WriteLine("\n****************************************************************");
             Console.WriteLine($"{debtor.GetName} will pay total amount of{debtor.GetAmount} and it is due on {DateTime.Now.AddDays(_payment)}");
 
-
+            Utility.ReturnToMenu();
         }
 
         public void biWeeklyPayment()
         {
-            _percentage = (decimal)(10d / 100);
-            Console.WriteLine("Record list");
+            double biWeeklyPercentage = (double)Percentage.biWeeklyPercentage;
+
+            _percentage = (double)(biWeeklyPercentage / 100);
+            Utility.RecordHeader();
+
             Console.WriteLine($"{debtor.GetName} willl pay N{debtor.GetAmount} through the bi-weekly installmental plan");
             Console.WriteLine($"Date of purchase: {_startDate = DateTime.Now}");
 
@@ -76,12 +93,16 @@ namespace RecordKeeperApp.App
             Console.WriteLine("\n****************************************************************");
             Console.WriteLine($"{debtor.GetName} will pay total amount of{debtor.GetAmount} and it is due on {DateTime.Now.AddDays(_payment)}");
 
+            Utility.ReturnToMenu();
         }
 
         public void monthly()
         {
-            _percentage = (decimal)(10d / 100);
-            Console.WriteLine("Record list");
+            double monthlyPercentage = (double)Percentage.monthlyPercentage;
+
+            _percentage = (double)(monthlyPercentage / 100);
+            Utility.RecordHeader();
+
             Console.WriteLine($"{debtor.GetName} willl pay N{debtor.GetAmount} through the monthly installmental plan");
             Console.WriteLine($"Date of purchase: {_startDate = DateTime.Now}");
 
@@ -96,12 +117,16 @@ namespace RecordKeeperApp.App
             Console.WriteLine("\n****************************************************************");
             Console.WriteLine($"{debtor.GetName} will pay total amount of{debtor.GetAmount} and it is due on {DateTime.Now.AddDays(_payment)}");
 
+            Utility.ReturnToMenu();
         }
 
         public void sixMonths()
         {
-            _percentage = (decimal)(10d / 100);
-            Console.WriteLine("Record list");
+            double sixMonthsPercentage = (double)Percentage.sixMonthsPercentage;
+
+            _percentage = (double)(sixMonthsPercentage / 100);
+            Utility.RecordHeader();
+
             Console.WriteLine($"{debtor.GetName} willl pay N{debtor.GetAmount} through the 6-month installmental plan");
             Console.WriteLine($"Date of purchase: {_startDate = DateTime.Now}");
 
@@ -116,12 +141,17 @@ namespace RecordKeeperApp.App
             Console.WriteLine("\n****************************************************************");
             Console.WriteLine($"{debtor.GetName} will pay total amount of{debtor.GetAmount} and it is due on {DateTime.Now.AddDays(_payment)}");
 
+
+            Utility.ReturnToMenu();
         }
 
         public void yearly()
         {
-            _percentage = (decimal)(10d / 100);
-            Console.WriteLine("Record list");
+            double yearlyPercentage = (double)Percentage.yearlyPercentage;
+
+            _percentage = (double)(yearlyPercentage / 100);
+            Utility.RecordHeader();
+
             Console.WriteLine($"{debtor.GetName} willl pay N{debtor.GetAmount} through the yearly installmental plan");
             Console.WriteLine($"Date of purchase: {_startDate = DateTime.Now}");
 
@@ -136,6 +166,7 @@ namespace RecordKeeperApp.App
             Console.WriteLine("\n****************************************************************");
             Console.WriteLine($"{debtor.GetName} will pay total amount of{debtor.GetAmount} and it is due on {DateTime.Now.AddDays(_payment)}");
 
+            Utility.ReturnToMenu();
         }
 
     }

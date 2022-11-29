@@ -16,6 +16,7 @@ namespace RecordKeeperApp
 
             InstallmentChoice paymentChoice = new();
             paymentChoice.InstallmentalPayment();
+
         }
     }
 }

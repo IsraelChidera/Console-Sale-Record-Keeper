@@ -1,4 +1,6 @@
-﻿using System;
+﻿using RecordKeeperApp.App;
+using RecordKeeperApp.App.PartialClasses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,5 +28,34 @@ namespace RecordKeeperApp.Design
             Thread.Sleep(200);
         }
 
+        public static void ReturnToMenu()
+        {
+            Console.WriteLine("\n\nDo you want to add another record\nPress 1 to continue\nPress 0 to exit");
+
+            int toContinue = Convert.ToInt32(Console.ReadLine());
+
+            InstallmentChoice choice = new();
+            CollectRecord records = new();
+            
+            switch (toContinue)
+            {
+                case 1:
+                    records.CollectRecords();
+                    choice.InstallmentalPayment();
+                    break;
+                case 0:
+                    Console.WriteLine("Thank you for banking with us");
+                    break;
+            }
+        }
+
+        public static void RecordHeader()
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("\n*************************************************************");
+            Console.WriteLine("Record list");
+            Console.WriteLine("**************************************************************");
+            Console.ResetColor();
+        }
     }
 }

@@ -13,7 +13,7 @@ namespace RecordKeeperApp.App.PartialClasses
     public partial class CollectRecord
     {
         private static string _name;
-        private static decimal _amount;
+        private static double _amount;
         public DateTime date;
 
         public string? GetName
@@ -23,7 +23,7 @@ namespace RecordKeeperApp.App.PartialClasses
             
         }
        
-        public decimal GetAmount
+        public double GetAmount
         {
             get { return _amount; }
             //set { _amount = value; }
@@ -46,7 +46,7 @@ namespace RecordKeeperApp.App.PartialClasses
 
         }
 
-        public CollectRecord(string name, decimal amount)
+        public CollectRecord(string name, double amount)
         {
             _name = name;
             _amount = amount;

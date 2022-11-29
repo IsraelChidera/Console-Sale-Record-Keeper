@@ -11,11 +11,12 @@
             Console.WriteLine("======> For a 25% installmental Payment via a Bi-Weekly Plan , Type 3");
             Console.WriteLine("======> For a 30% installmental Payment via a Monthly Plan , Type 4");
             Console.WriteLine("======> For a 40% installmental Payment via a Six-Month Plan , Type 5");
-            Console.WriteLine("======> For a 50% installmental Payment via a One-Year Plan , Type 5");
+            Console.WriteLine("======> For a 50% installmental Payment via a One-Year Plan , Type 6");
+            Console.WriteLine("======> To exit , Type 0");
 
             Console.Write("\nSelect plan ------> ");
             int paymentChoice = Convert.ToInt32(Console.ReadLine());
-
+            
             switch (paymentChoice)
             {
                 case 1:
@@ -42,6 +43,9 @@
                 case 6:
                     Console.WriteLine("Yearly plan");
                     paymentInstallment.yearly();
+                    break;
+                case 0:
+                    Console.WriteLine("Thank you... See you later");
                     break;
                 default:
                     Console.WriteLine("Invalid plan");
