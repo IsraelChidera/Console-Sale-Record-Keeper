@@ -82,7 +82,7 @@ namespace RecordKeeperApp.App
             Console.WriteLine("****************************************************************");
 
             _startDate = DateTime.Now;
-            _dueDate = DateTime.Now.AddDays(num/7);
+            _dueDate = DateTime.Now.AddDays(num);
 
 
             Console.WriteLine("Number of installment to pay ==>");
