@@ -13,7 +13,9 @@ namespace RecordKeeperApp
 
             CollectRecord records = new();
             records.CollectRecords();
-            
+
+            InstallmentChoice paymentChoice = new();
+            paymentChoice.InstallmentalPayment();
         }
     }
 }

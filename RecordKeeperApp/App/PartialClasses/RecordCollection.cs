@@ -12,20 +12,21 @@ namespace RecordKeeperApp.App.PartialClasses
 
     public partial class CollectRecord
     {
-        private string? _name;
-        private int _amount;
+        private static string _name;
+        private static decimal _amount;
         public DateTime date;
 
         public string? GetName
         {
             get { return _name; }
-            set { _name = value; }
+            //set { _name = value; }
+            
         }
        
-        public int GetAmount
+        public decimal GetAmount
         {
             get { return _amount; }
-            set { _amount = value; }
+            //set { _amount = value; }
         }
 
         public DateTime GetDateTime
@@ -38,6 +39,17 @@ namespace RecordKeeperApp.App.PartialClasses
         {
             minimumPayment = 10000,
             minuimumNameLength = 3
+        }
+
+        public CollectRecord()
+        {
+
+        }
+
+        public CollectRecord(string name, decimal amount)
+        {
+            _name = name;
+            _amount = amount;
         }
     }
     
