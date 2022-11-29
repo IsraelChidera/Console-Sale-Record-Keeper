@@ -56,6 +56,7 @@ namespace RecordKeeperApp.Design
             Console.WriteLine("Record list");
             Console.WriteLine("**************************************************************");
             Console.ResetColor();
+            Console.WriteLine("Hello, Mr Buhari...\nHere is a record list of those owing you\n");
         }
     }
 }

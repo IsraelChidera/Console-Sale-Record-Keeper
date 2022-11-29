@@ -3,7 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace RecordKeeperApp.App.PartialClasses
 {
@@ -50,13 +52,15 @@ namespace RecordKeeperApp.App.PartialClasses
             }
 
             Console.Write("\nAmount to pay: ");
-            _amount = Convert.ToInt32(Console.ReadLine());
+            
+            
 
             while (true)
             {
                 try
                 {
-                    if (_amount > minimumAmount)
+                    _amount = Convert.ToInt32(Console.ReadLine());
+                    if (_amount > minimumAmount && _amount>0)
                     {
                         Console.WriteLine("Amount =====> {0}", _amount);
                         break;
@@ -65,20 +69,16 @@ namespace RecordKeeperApp.App.PartialClasses
                     {
                         Console.WriteLine("Invalid input. You can only pay installmental for products higher than" +
                             " N10000");
+                        Console.Write("\nAmount to pay: ");
                         _amount = Convert.ToInt32(Console.ReadLine());
                     }
                 }
-                catch (FormatException)
+                catch (FormatException e)
                 {
+                    Console.WriteLine(e.Message);
                     Console.WriteLine("Invalid inputs. Try again");
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine("Invalid amount");
-                    Console.WriteLine(e.ToString());
-                    Console.Write("Amount owed: ");
-                    _amount = Convert.ToInt32(Console.ReadLine());
-                }
+                    Console.Write("\nAmount to pay: ");                    
+                }                
             }
             
 
