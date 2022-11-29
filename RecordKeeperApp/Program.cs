@@ -1,4 +1,5 @@
 ﻿using RecordKeeperApp.App;
+using RecordKeeperApp.App.PartialClasses;
 using RecordKeeperApp.Design;
 
 namespace RecordKeeperApp
@@ -10,8 +11,9 @@ namespace RecordKeeperApp
             Utility.LoadingAnimation();
             Home.displayHome();
 
-            Record recordInput = new();
-            recordInput.CollectRecords();
+            CollectRecord records = new();
+            records.CollectRecords();
+            
         }
     }
 }
