@@ -8,6 +8,8 @@ namespace RecordKeeperApp
     {
         static void Main(string[] args)
         {
+            
+            
             Utility.LoadingAnimation();
             Home.displayHome();
 
@@ -16,7 +18,7 @@ namespace RecordKeeperApp
 
             InstallmentChoice paymentChoice = new();
             paymentChoice.InstallmentalPayment();
-
+            
         }
     }
 }

@@ -46,6 +46,10 @@ namespace RecordKeeperApp.Design
                 case 0:
                     Console.WriteLine("Thank you for banking with us");
                     break;
+                default:
+                    Console.WriteLine("Invalid input. What do you want to do?");
+                    toContinue = Convert.ToInt32(Console.ReadLine());
+                    break;
             }
         }
 
@@ -56,7 +60,7 @@ namespace RecordKeeperApp.Design
             Console.WriteLine("Record list");
             Console.WriteLine("**************************************************************");
             Console.ResetColor();
-            Console.WriteLine("Hello, Mr Buhari...\nHere is a record list of those owing you\n");
+            Console.WriteLine("Hello, Mr Buhari...\nHere is a record list of buyers with installmental pay\n");
         }
 
 

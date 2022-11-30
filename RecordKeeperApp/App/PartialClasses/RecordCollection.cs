@@ -19,14 +19,14 @@ namespace RecordKeeperApp.App.PartialClasses
         public string? GetName
         {
             get { return _name; }
-            //set { _name = value; }
+            set { _name = value; }
             
         }
        
         public double GetAmount
         {
             get { return _amount; }
-            //set { _amount = value; }
+            set { _amount = value; }
         }
 
         public DateTime GetDateTime

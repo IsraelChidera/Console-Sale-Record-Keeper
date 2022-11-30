@@ -21,13 +21,14 @@ namespace RecordKeeperApp.App.PartialClasses
             int minimumAmount = (int)PaymentMade.minimumPayment;
             int minimumLength = (int)PaymentMade.minuimumNameLength;
 
+
             Console.Write("\nName of buyer: ");
             _name = Console.ReadLine();
-
             while (true)
             {
                 try
                 {
+                    
                     if (_name?.Length >= minimumLength)
                     {
                         Console.WriteLine("Buyer's name =====> {0}", _name);
@@ -36,6 +37,7 @@ namespace RecordKeeperApp.App.PartialClasses
                     else
                     {
                         Console.WriteLine("Name is too short, Try again!");
+                        Console.Write("\nName of buyer: ");
                         _name = Console.ReadLine();
                     }
 
@@ -51,9 +53,7 @@ namespace RecordKeeperApp.App.PartialClasses
                 }
             }
 
-            Console.Write("\nAmount to pay: ");
-            
-            
+            Console.Write("\nAmount to pay: ");                        
 
             while (true)
             {
@@ -69,8 +69,7 @@ namespace RecordKeeperApp.App.PartialClasses
                     {
                         Console.WriteLine("Invalid input. You can only pay installmental for products higher than" +
                             " N10000");
-                        Console.Write("\nAmount to pay: ");
-                        _amount = Convert.ToInt32(Console.ReadLine());
+                        Console.Write("\nAmount to pay: ");                        
                     }
                 }
                 catch (FormatException e)
